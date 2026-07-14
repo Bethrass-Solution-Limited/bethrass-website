@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/*
+  Bethrass design system — v1.0
+  Colors use the Tailwind default palette directly (amber/slate/stone/emerald),
+  per the approved spec §2.1, so no custom color tokens are declared here.
+  Only fonts and the signature seal animation are registered globally.
+*/
+
+@theme {
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-ibm-plex-sans);
+  --font-mono-brand: var(--font-ibm-plex-mono);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  /* slate-950 background, stone-50 text — the site is dark by design */
+  background-color: #020617;
+  color: #fafaf9;
+}
+
+/* Signature Seal Mark — slow ambient rotation on the outer ring only.
+   Respects prefers-reduced-motion per spec §2.3 / §2.4. */
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.seal-ring {
+  transform-origin: center;
+  animation: slow-spin 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seal-ring {
+    animation: none;
+  }
+}
