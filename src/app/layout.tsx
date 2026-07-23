@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 
 // Display — headlines only (spec §2.2)
 const display = Space_Grotesk({
@@ -66,10 +68,14 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        {/* NavBar and Footer are added in Phase 1 */}
+
+        <Header />
+
         <main id="content" className="flex-1">
           {children}
         </main>
+
+        <Footer />
       </body>
     </html>
   );
