@@ -2,12 +2,38 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/ui/logo";
 import { NAV_LINKS } from "./nav-links";
 
+function isActiveRoute(pathname: string, href: string) {
+  if (href === "/") {
+    return pathname === "/";
+  }
+
+  if (href === "/about") {
+    return pathname === "/about";
+  }
+
+  if (href === "/contact") {
+    return pathname === "/contact";
+  }
+
+  if (href === "/solutions") {
+    return pathname === "/solutions" || pathname.startsWith("/solutions/");
+  }
+
+  if (href === "/solutions/urs") {
+    return pathname === "/solutions/urs" || pathname.startsWith("/solutions/urs/");
+  }
+
+  return false;
+}
+
 export function Header() {
+  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   return (
@@ -18,15 +44,23 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex md:gap-x-8">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-stone-300 transition-colors hover:text-amber-500"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = pathname ? isActiveRoute(pathname, link.href) : false;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors border-b-2 pb-1 ${
+                    isActive
+                      ? "text-amber-400 border-amber-500"
+                      : "text-stone-300 border-transparent hover:text-amber-500 hover:border-amber-500"
+                  }`}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -51,16 +85,24 @@ export function Header() {
         <div className="border-b border-slate-800 bg-slate-950 md:hidden">
           <Container className="py-4">
             <nav className="flex flex-col gap-y-4">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-base font-medium text-stone-300 transition-colors hover:text-amber-500"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const isActive = pathname ? isActiveRoute(pathname, link.href) : false;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`text-base font-medium transition-colors border-b-2 pb-1 ${
+                      isActive
+                        ? "text-amber-400 border-amber-500"
+                        : "text-stone-300 border-transparent hover:text-amber-500 hover:border-amber-500"
+                    }`}
+                    aria-current={isActive ? "page" : undefined}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
             </nav>
           </Container>
         </div>
