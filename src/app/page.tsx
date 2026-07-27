@@ -330,7 +330,7 @@ export default function Home() {
                 </div>
               </div>
               <Link
-                href="/solutions/data"
+                href="/solutions"
                 className="inline-flex items-center gap-2 font-mono-brand text-sm font-medium text-stone-400 hover:text-stone-300 group pt-2"
               >
                 Learn More

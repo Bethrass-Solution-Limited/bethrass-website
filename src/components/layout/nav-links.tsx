@@ -8,17 +8,17 @@ export const NAV_LINKS = [
 export const FOOTER_LINKS = {
   solutions: [
     { label: "Unified Record System", href: "/solutions/urs" },
-    { label: "Enterprise AI", href: "/solutions/ai" },
-    { label: "Data Infrastructure", href: "/solutions/data" },
+    { label: "Enterprise AI", href: "/solutions" },
+    { label: "Data Infrastructure", href: "/solutions" },
   ],
   company: [
     { label: "About Us", href: "/about" },
-    { label: "Our Story", href: "/about#story" },
-    { label: "Careers", href: "/careers" },
+    { label: "Our Story", href: "/about" },
+    { label: "Careers", href: "/contact" },
   ],
   legal: [
-    { label: "Privacy Policy", href: "/legal/privacy" },
-    { label: "Terms of Service", href: "/legal/terms" },
-    { label: "Security", href: "/legal/security" },
+    { label: "Privacy Policy", href: "/contact" },
+    { label: "Terms of Service", href: "/contact" },
+    { label: "Security", href: "/contact" },
   ],
 } as const;

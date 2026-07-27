@@ -26,7 +26,7 @@ const initiatives = [
     eyebrow: "Intelligence and operations",
     summary:
       "A platform direction for operational analytics, structured insight, and data-driven decision support for complex institutional environments.",
-    route: "/solutions/data",
+    route: "/solutions",
     accent: "slate",
     icon: Binary,
   },
