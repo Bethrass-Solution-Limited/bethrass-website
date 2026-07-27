@@ -25,22 +25,22 @@ export const EXTERNAL_APPS: Record<ExternalAppKey, ExternalAppConfig> = {
   urs: {
     name: "URS — Unified Record System",
     url: process.env.NEXT_PUBLIC_URS_APP_URL || null,
-    fallback: "/products/urs",
+    fallback: "/solutions/urs",
   },
   lin: {
     name: "LIN Platform",
     url: process.env.NEXT_PUBLIC_LIN_APP_URL || null,
-    fallback: "/products",
+    fallback: "/solutions",
   },
   academy: {
     name: "Bethrass Academy",
     url: process.env.NEXT_PUBLIC_ACADEMY_URL || null,
-    fallback: "/products",
+    fallback: "/solutions",
   },
   docs: {
     name: "Documentation",
     url: process.env.NEXT_PUBLIC_DOCS_URL || null,
-    fallback: "/products/urs/how-it-works",
+    fallback: "/solutions/urs",
   },
 };
 
