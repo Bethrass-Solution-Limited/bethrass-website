@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BarChart3, Blocks, Shield, Workflow } from "lucide-react";
 import { Container } from "@/components/ui/container";
+
+export const metadata: Metadata = {
+  title: "Selected Client Work | Bethrass",
+  description:
+    "Bethrass is building a disciplined record of verified client work, case studies, and delivered systems for institutional organizations.",
+};
 
 const engagementTypes = [
   "Verified client engagements",

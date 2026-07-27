@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Mail, MessageCircle, Shield } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Contact Bethrass | Institutional Technology Enquiries",
+  description:
+    "Get in touch with Bethrass Solution Limited for enquiries about trusted infrastructure, analytics, and institutional technology.",
+};
 
 const pathways = [
   {

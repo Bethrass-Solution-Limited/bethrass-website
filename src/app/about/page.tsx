@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Cpu, Database, Shield } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "About Bethrass | Trusted Systems for Institutions",
+  description:
+    "Learn about Bethrass Solution Limited and the company’s approach to trusted digital infrastructure, secure systems, and institutional delivery.",
+};
 
 const pillars = [
   {

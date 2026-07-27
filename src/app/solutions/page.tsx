@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Binary, Database, Shield, Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/container";
+
+export const metadata: Metadata = {
+  title: "Bethrass Solutions | Trusted Infrastructure and Initiatives",
+  description:
+    "Explore Bethrass initiatives in trusted infrastructure, analytics, and institutional technology.",
+};
 
 const initiatives = [
   {

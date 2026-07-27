@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Shield, Workflow } from "lucide-react";
 import { Container } from "@/components/ui/container";
+
+export const metadata: Metadata = {
+  title: "Unified Record System | Bethrass",
+  description:
+    "Explore Bethrass’s Unified Record System concept for structured, verifiable institutional records and accountability.",
+};
 
 const architecturePoints = [
   "Identity and actor attribution",

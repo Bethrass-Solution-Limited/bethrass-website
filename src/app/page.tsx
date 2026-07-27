@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { 
   ArrowRight, 
@@ -9,6 +10,12 @@ import {
   Binary 
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
+
+export const metadata: Metadata = {
+  title: "Bethrass | Enterprise Infrastructure, Engineered for Trust",
+  description:
+    "Bethrass builds trusted digital infrastructure, secure systems, and analytics for institutions and organizations.",
+};
 
 export default function Home() {
   return (
