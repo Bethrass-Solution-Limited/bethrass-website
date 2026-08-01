@@ -13,6 +13,7 @@ const initialFormState = {
   organization: "",
   subject: "",
   message: "",
+  _gotcha: "",
 };
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -60,7 +61,7 @@ export function ContactFormSection() {
     }
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const nextErrors = validateForm(formData);
@@ -75,11 +76,40 @@ export function ContactFormSection() {
     setStatus("submitting");
     setFeedback("");
 
-    window.setTimeout(() => {
+    try {
+      const response = await fetch("https://formspree.io/f/mrenwygn", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          organization: formData.organization,
+          subject: formData.subject,
+          message: formData.message,
+          _gotcha: formData._gotcha,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || result.error) {
+        throw new Error(result.error || "Submission failed. Please try again.");
+      }
+
       setStatus("success");
-      setFeedback("Thank you. Your enquiry has been prepared and is ready to be sent.");
+      setFeedback("Thank you. Your enquiry has been sent successfully.");
       setFormData(initialFormState);
-    }, 800);
+    } catch (error) {
+      setStatus("error");
+      setFeedback(
+        error instanceof Error
+          ? error.message
+          : "There was an issue sending your enquiry. Please try again later."
+      );
+    }
   };
 
   return (
@@ -121,6 +151,18 @@ export function ContactFormSection() {
               onSubmit={handleSubmit}
               className="rounded-2xl border border-white/10 bg-[#171717] p-8 md:p-10"
             >
+              <div className="sr-only">
+                <label htmlFor="_gotcha">Leave this field blank</label>
+                <input
+                  id="_gotcha"
+                  name="_gotcha"
+                  type="text"
+                  autoComplete="off"
+                  tabIndex={-1}
+                  value={formData._gotcha}
+                  onChange={handleChange}
+                />
+              </div>
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-[#111111] text-[#D4AF37]">
                   <MessageCircle className="h-5 w-5" />
@@ -160,7 +202,9 @@ export function ContactFormSection() {
                     name="name"
                     type="text"
                     autoComplete="name"
+                    placeholder="Your full name"
                     required
+                    aria-required="true"
                     value={formData.name}
                     onChange={handleChange}
                     aria-invalid={Boolean(errors.name)}
@@ -183,7 +227,9 @@ export function ContactFormSection() {
                     name="email"
                     type="email"
                     autoComplete="email"
+                    placeholder="name@example.com"
                     required
+                    aria-required="true"
                     value={formData.email}
                     onChange={handleChange}
                     aria-invalid={Boolean(errors.email)}
@@ -206,6 +252,7 @@ export function ContactFormSection() {
                     name="organization"
                     type="text"
                     autoComplete="organization"
+                    placeholder="Company or institution"
                     value={formData.organization}
                     onChange={handleChange}
                     className="w-full rounded-md border border-white/10 bg-[#111111] px-4 py-3 text-sm text-white outline-none transition focus:border-[#D4AF37]"
@@ -220,7 +267,9 @@ export function ContactFormSection() {
                     id="subject"
                     name="subject"
                     type="text"
+                    placeholder="Tell us what you’re enquiring about"
                     required
+                    aria-required="true"
                     value={formData.subject}
                     onChange={handleChange}
                     aria-invalid={Boolean(errors.subject)}
@@ -242,7 +291,9 @@ export function ContactFormSection() {
                     id="message"
                     name="message"
                     rows={6}
+                    placeholder="Describe your enquiry, project, or partnership interest"
                     required
+                    aria-required="true"
                     value={formData.message}
                     onChange={handleChange}
                     aria-invalid={Boolean(errors.message)}
