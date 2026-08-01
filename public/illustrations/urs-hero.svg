@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">URS trusted digital record infrastructure</title><desc id="desc">A secure record vault connected to institutional and cloud infrastructure nodes.</desc>
+  <g stroke="#171717" stroke-width="2"><path d="M74 122h1052M74 240h1052M74 360h1052M74 480h1052M74 600h1052"/><path d="M154 68v584M330 68v584M510 68v584M690 68v584M870 68v584M1050 68v584"/></g>
+  <g stroke="#BDBDBD" stroke-width="2" stroke-dasharray="7 10" opacity=".65"><path d="M240 195 473 301M240 515 473 411M960 195 727 301M960 515 727 411M300 106 512 266M900 614 688 446"/></g>
+  <g stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round"><path d="M406 302h-71M794 302h71M406 410h-71M794 410h71"/><path d="M514 198v64M686 198v64M514 514v-64M686 514v-64"/></g>
+  <g fill="#111111" stroke="#FFFFFF" stroke-width="2"><rect x="443" y="244" width="314" height="224" rx="16"/><path d="M443 293h314"/><circle cx="474" cy="269" r="5" fill="#D4AF37" stroke="none"/><circle cx="493" cy="269" r="5" stroke="none"/><path d="M487 329h100M487 355h154M487 381h122" stroke="#BDBDBD" stroke-width="6" stroke-linecap="round"/></g>
+  <path d="m669 319 48 18v39c0 36-21 64-48 78-27-14-48-42-48-78v-39l48-18Z" fill="#0A0A0A" stroke="#D4AF37" stroke-width="4" stroke-linejoin="round"/><path d="m646 376 15 15 31-34" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#111111" stroke="#D4AF37" stroke-width="3"><rect x="175" y="144" width="130" height="102" rx="12"/><rect x="175" y="464" width="130" height="102" rx="12"/><rect x="895" y="144" width="130" height="102" rx="12"/><rect x="895" y="464" width="130" height="102" rx="12"/></g>
+  <g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"><path d="M208 185h64M208 207h40M208 505h64M208 527h48M928 185h64M928 207h40M928 505h64M928 527h48"/></g>
+  <g fill="#0A0A0A" stroke="#D4AF37" stroke-width="3"><circle cx="300" cy="106" r="24"/><circle cx="900" cy="614" r="24"/></g><path d="M286 109c0-6 6-11 14-11 6 0 10 3 12 7 7 0 12 5 12 11 0 7-6 12-13 12h-25c-7 0-12-5-12-11 0-5 5-9 12-8Z" stroke="#FFFFFF" stroke-width="2.5"/>
+  <path d="M886 617c0-6 6-11 14-11 6 0 10 3 12 7 7 0 12 5 12 11 0 7-6 12-13 12h-25c-7 0-12-5-12-11 0-5 5-9 12-8Z" stroke="#FFFFFF" stroke-width="2.5"/>
+  <g fill="#D4AF37"><circle cx="335" cy="302" r="5"/><circle cx="335" cy="410" r="5"/><circle cx="865" cy="302" r="5"/><circle cx="865" cy="410" r="5"/><circle cx="514" cy="198" r="5"/><circle cx="686" cy="198" r="5"/><circle cx="514" cy="514" r="5"/><circle cx="686" cy="514" r="5"/></g>
+</svg>

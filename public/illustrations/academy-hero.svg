@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Academy digital technology learning platform</title><desc id="desc">A digital classroom, connected learning modules, and progression network.</desc>
+  <g stroke="#171717" stroke-width="2"><path d="M70 128h1060M70 240h1060M70 352h1060M70 464h1060M70 576h1060"/><path d="M150 70v580M350 70v580M550 70v580M750 70v580M950 70v580"/></g>
+  <g fill="#111111" stroke="#FFFFFF" stroke-width="3"><rect x="347" y="163" width="506" height="312" rx="16"/><path d="M347 219h506"/><circle cx="382" cy="191" r="6" fill="#D4AF37" stroke="none"/></g>
+  <g fill="#171717" stroke="#BDBDBD" stroke-width="2"><rect x="385" y="249" width="254" height="164" rx="8"/><rect x="670" y="249" width="145" height="164" rx="8"/></g>
+  <path d="m421 291 91-34 91 34-91 34-91-34Z" fill="#0A0A0A" stroke="#D4AF37" stroke-width="3"/><path d="M448 307v29c0 15 29 25 64 25s64-10 64-25v-29" stroke="#FFFFFF" stroke-width="3"/><path d="M603 291v47" stroke="#D4AF37" stroke-width="3"/><circle cx="603" cy="343" r="5" fill="#D4AF37"/>
+  <g stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"><path d="M700 290h85M700 322h63M700 354h74"/></g><circle cx="718" cy="290" r="7" fill="#D4AF37"/>
+  <path d="M517 475v63M435 538h164" stroke="#D4AF37" stroke-width="4" stroke-linecap="round"/><path d="M464 574h106" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+  <g fill="#111111" stroke="#D4AF37" stroke-width="3"><rect x="105" y="159" width="145" height="92" rx="12"/><rect x="105" y="463" width="145" height="92" rx="12"/><rect x="950" y="159" width="145" height="92" rx="12"/><rect x="950" y="463" width="145" height="92" rx="12"/></g>
+  <g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"><path d="M135 194h85M135 216h54M135 498h85M135 520h54M980 194h85M980 216h54M980 498h85M980 520h54"/></g>
+  <g stroke="#D4AF37" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 10"><path d="M250 205 347 266M250 509 347 395M853 266l97-61M853 395l97 114"/></g>
+  <g fill="#0A0A0A" stroke="#D4AF37" stroke-width="3"><circle cx="300" cy="278" r="25"/><circle cx="900" cy="442" r="25"/></g><path d="m287 278 9 9 17-19" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M887 449h26M900 436v26" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <g fill="#D4AF37"><circle cx="250" cy="205" r="5"/><circle cx="250" cy="509" r="5"/><circle cx="950" cy="205" r="5"/><circle cx="950" cy="509" r="5"/></g>
+</svg>

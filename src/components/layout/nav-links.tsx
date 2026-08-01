@@ -1,25 +1,26 @@
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Infrastructure", href: "/solutions/urs" },
-  { label: "About", href: "/about" },
+  { label: "Products", href: "/products" },
+  { label: "Company", href: "/company" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
 export const FOOTER_LINKS = {
-  solutions: [
-    { label: "Unified Record System", href: "/solutions/urs" },
-    { label: "Enterprise AI", href: "/solutions" },
-    { label: "Data Infrastructure", href: "/solutions" },
+  products: [
+    { label: "URS", href: "/products/urs" },
+    { label: "LIN", href: "/products/lin" },
+    { label: "Analytics Studio", href: "/products/analytics" },
+    { label: "Academy", href: "/products/academy" },
   ],
   company: [
-    { label: "About Us", href: "/about" },
-    { label: "Our Story", href: "/about" },
-    { label: "Careers", href: "/contact" },
+    { label: "Home", href: "/" },
+    { label: "Company", href: "/company" },
+    { label: "Contact", href: "/contact" },
   ],
   legal: [
-    { label: "Privacy Policy", href: "/contact" },
-    { label: "Terms of Service", href: "/contact" },
-    { label: "Security", href: "/contact" },
+    { label: "Privacy", href: "/privacy" },
+    { label: "Terms", href: "/terms" },
+    { label: "Security", href: "/security" },
+    { label: "Careers", href: "/careers" },
   ],
 } as const;

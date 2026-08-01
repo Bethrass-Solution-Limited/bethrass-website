@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Shield, Workflow } from "lucide-react";
 import { Container } from "@/components/ui/container";
+import { ProductStatusBadge } from "@/components/ui/ProductStatusBadge";
+import { PRODUCT_META } from "@/constants/products";
 
 export const metadata: Metadata = {
   title: "Unified Record System | Bethrass",
@@ -209,11 +211,17 @@ export default function UrsPage() {
               <span className="mb-3 block font-mono-brand text-xs uppercase tracking-[0.3em] text-amber-500">
                 Current status
               </span>
+              <div className="mb-6">
+                <ProductStatusBadge
+                  stage={PRODUCT_META.urs.stage}
+                  status={PRODUCT_META.urs.status}
+                />
+              </div>
               <h2 className="font-display text-3xl font-semibold text-stone-50">
-                URS remains in architecture, documentation, and MVP preparation.
+                {PRODUCT_META.urs.name} is currently positioned as a platform concept in active preparation.
               </h2>
               <p className="mt-5 text-base leading-relaxed text-stone-400">
-                URS is currently positioned as a platform concept and an active architecture and documentation effort, with MVP preparation underway. It is not presented here as a fully deployed production system, and no customer, deployment, certification, partnership, or performance claims are included.
+                {PRODUCT_META.urs.description} It is not presented here as a fully deployed production system, and no customer, deployment, certification, partnership, or performance claims are included.
               </p>
             </div>
 

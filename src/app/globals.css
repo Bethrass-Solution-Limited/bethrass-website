@@ -1,46 +1,56 @@
 @import "tailwindcss";
 
-/*
-  Bethrass design system — v1.0
-  Colors use the Tailwind default palette directly (amber/slate/stone/emerald),
-  per the approved spec §2.1, so no custom color tokens are declared here.
-  Only fonts and the signature seal animation are registered globally.
-*/
+/* Bethrass design tokens (dark-theme first) */
+:root {
+  /* Colors */
+  --color-bg: #0A0A0A;
+  --color-surface: #111111;
+  --color-card: #171717;
+  --color-accent: #D4AF37;
+  --color-text: #FFFFFF;
+  --color-text-secondary: #BDBDBD;
 
-@theme {
+  /* Typography tokens (set by Next font CSS variables in layout) */
   --font-display: var(--font-space-grotesk);
   --font-body: var(--font-ibm-plex-sans);
   --font-mono-brand: var(--font-ibm-plex-mono);
-}
 
-:root {
   color-scheme: dark;
 }
 
-body {
-  /* slate-950 background, stone-50 text — the site is dark by design */
-  background-color: #020617;
-  color: #fafaf9;
+html, body, #__next {
+  height: 100%;
 }
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility surface and card backgrounds */
+.surface { background-color: var(--color-surface); }
+.card { background-color: var(--color-card); }
+
+/* Accent helpers */
+.accent { color: var(--color-accent); }
+.accent-bg { background-color: var(--color-accent); }
+
+/* Typography */
+.lead { color: var(--color-text-secondary); }
+.muted { color: var(--color-text-secondary); }
 
 /* Signature Seal Mark — slow ambient rotation on the outer ring only.
-   Respects prefers-reduced-motion per spec §2.3 / §2.4. */
+   Respects prefers-reduced-motion. */
 @keyframes slow-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.seal-ring {
-  transform-origin: center;
-  animation: slow-spin 40s linear infinite;
-}
+.seal-ring { transform-origin: center; animation: slow-spin 40s linear infinite; }
 
 @media (prefers-reduced-motion: reduce) {
-  .seal-ring {
-    animation: none;
-  }
+  .seal-ring { animation: none; }
 }

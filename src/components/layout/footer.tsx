@@ -29,10 +29,10 @@ export function Footer() {
           {/* Links Columns */}
           <div>
             <h3 className="font-display text-sm font-semibold text-stone-200 uppercase tracking-wider">
-              Solutions
+              Products
             </h3>
             <ul className="mt-4 space-y-2">
-              {FOOTER_LINKS.solutions.map((link) => (
+              {FOOTER_LINKS.products.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

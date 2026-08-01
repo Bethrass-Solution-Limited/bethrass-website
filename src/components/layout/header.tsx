@@ -13,20 +13,32 @@ function isActiveRoute(pathname: string, href: string) {
     return pathname === "/";
   }
 
-  if (href === "/about") {
-    return pathname === "/about";
+  if (href === "/products") {
+    return pathname === "/products" || pathname.startsWith("/products/");
+  }
+
+  if (href === "/company") {
+    return pathname === "/company";
   }
 
   if (href === "/contact") {
     return pathname === "/contact";
   }
 
-  if (href === "/solutions") {
-    return pathname === "/solutions" || pathname.startsWith("/solutions/");
+  if (href === "/privacy") {
+    return pathname === "/privacy";
   }
 
-  if (href === "/solutions/urs") {
-    return pathname === "/solutions/urs" || pathname.startsWith("/solutions/urs/");
+  if (href === "/terms") {
+    return pathname === "/terms";
+  }
+
+  if (href === "/security") {
+    return pathname === "/security";
+  }
+
+  if (href === "/careers") {
+    return pathname === "/careers";
   }
 
   return false;

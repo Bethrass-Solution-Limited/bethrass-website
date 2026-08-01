@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">LIN digital land identification infrastructure</title><desc id="desc">An abstract coordinate grid with layered parcels and spatial data markers.</desc>
+  <g transform="translate(135 92)"><path d="m82 110 322-98 500 126-322 98L82 110Z" fill="#111111" stroke="#D4AF37" stroke-width="3"/><path d="m82 110 500 126v250L82 360V110ZM582 236l322-98v250L582 486V236Z" fill="#111111" stroke="#FFFFFF" stroke-width="2"/>
+    <g stroke="#BDBDBD" stroke-width="2" opacity=".7"><path d="m155 126 500 126M227 82l500 126M300 58l500 126M372 36l500 126M155 126v250M227 144v250M300 162v250M372 180v250M445 199v250M518 217v250M655 252v250M727 229v250M800 207v250"/></g>
+    <g fill="#171717" stroke="#D4AF37" stroke-width="3"><path d="m255 166 116 29v96l-116-29v-96Z"/><path d="m466 220 116 29v96l-116-29v-96Z"/><path d="m658 153 116-35v96l-116 35v-96Z"/></g>
+    <g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"><path d="m279 200 68 17M279 225l40 10M490 255l68 17M490 280l40 10M682 170l68-21M682 195l42-13"/></g>
+    <g fill="#0A0A0A" stroke="#D4AF37" stroke-width="4"><circle cx="313" cy="214" r="20"/><circle cx="524" cy="268" r="20"/><circle cx="716" cy="182" r="20"/></g><circle cx="313" cy="214" r="5" fill="#FFFFFF"/><circle cx="524" cy="268" r="5" fill="#FFFFFF"/><circle cx="716" cy="182" r="5" fill="#FFFFFF"/>
+    <g stroke="#D4AF37" stroke-width="2" stroke-dasharray="6 8"><path d="M313 214 524 268 716 182"/><path d="M116 516h770M48 471h858"/></g>
+    <g fill="#D4AF37"><path d="M72 499h8v-8h5v8h8v5h-8v8h-5v-8h-8v-5ZM872 499h8v-8h5v8h8v5h-8v8h-5v-8h-8v-5Z"/></g>
+    <g stroke="#FFFFFF" stroke-width="2"><path d="M35 525h70M35 525v-70M865 525h70M935 525v-70"/></g>
+  </g>
+</svg>

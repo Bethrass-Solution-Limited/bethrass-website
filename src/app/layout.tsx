@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
@@ -77,6 +78,7 @@ export default function RootLayout({
 
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-8Y0KVY5NVJ" />
     </html>
   );
 }
