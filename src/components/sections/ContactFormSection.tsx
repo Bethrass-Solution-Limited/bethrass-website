@@ -8,7 +8,7 @@ import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/lib/site";
 
 const initialFormState = {
-  name: "",
+  fullName: "",
   email: "",
   organization: "",
   subject: "",
@@ -23,8 +23,8 @@ type FormErrors = Partial<Record<keyof FormState, string>>;
 function validateForm(values: FormState) {
   const errors: FormErrors = {};
 
-  if (values.name.trim().length < 2) {
-    errors.name = "Please enter your full name.";
+  if (values.fullName.trim().length < 2) {
+    errors.fullName = "Please enter your full name.";
   }
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -77,26 +77,27 @@ export function ContactFormSection() {
     setFeedback("");
 
     try {
-      const response = await fetch("https://formspree.io/f/mrenwygn", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          organization: formData.organization,
-          subject: formData.subject,
-          message: formData.message,
-          _gotcha: formData._gotcha,
-        }),
+        body: JSON.stringify(formData),
       });
 
       const result = await response.json();
 
-      if (!response.ok || result.error) {
-        throw new Error(result.error || "Submission failed. Please try again.");
+      if (!response.ok) {
+        if (result && typeof result === "object" && "errors" in result && result.errors) {
+          setErrors(result.errors as FormErrors);
+          setStatus("error");
+          setFeedback("Please correct the highlighted fields and try again.");
+          return;
+        }
+
+        const serverError = typeof result.error === "string" ? result.error : "Submission failed. Please try again.";
+        throw new Error(serverError);
       }
 
       setStatus("success");
@@ -146,8 +147,6 @@ export function ContactFormSection() {
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
             <form
-              action="https://formspree.io/f/mrenwygn"
-              method="POST"
               onSubmit={handleSubmit}
               className="rounded-2xl border border-white/10 bg-[#171717] p-8 md:p-10"
             >
@@ -194,26 +193,26 @@ export function ContactFormSection() {
 
               <div className="mt-8 grid gap-5 md:grid-cols-2">
                 <div className="md:col-span-2">
-                  <label htmlFor="name" className="mb-2 block text-sm font-medium text-white">
+                  <label htmlFor="fullName" className="mb-2 block text-sm font-medium text-white">
                     Full name <span className="text-[#D4AF37]">*</span>
                   </label>
                   <input
-                    id="name"
-                    name="name"
+                    id="fullName"
+                    name="fullName"
                     type="text"
                     autoComplete="name"
                     placeholder="Your full name"
                     required
                     aria-required="true"
-                    value={formData.name}
+                    value={formData.fullName}
                     onChange={handleChange}
-                    aria-invalid={Boolean(errors.name)}
-                    aria-describedby={errors.name ? "name-error" : undefined}
+                    aria-invalid={Boolean(errors.fullName)}
+                    aria-describedby={errors.fullName ? "fullName-error" : undefined}
                     className="w-full rounded-md border border-white/10 bg-[#111111] px-4 py-3 text-sm text-white outline-none transition focus:border-[#D4AF37]"
                   />
-                  {errors.name ? (
-                    <p id="name-error" className="mt-2 text-sm text-[#BDBDBD]">
-                      {errors.name}
+                  {errors.fullName ? (
+                    <p id="fullName-error" className="mt-2 text-sm text-[#BDBDBD]">
+                      {errors.fullName}
                     </p>
                   ) : null}
                 </div>
