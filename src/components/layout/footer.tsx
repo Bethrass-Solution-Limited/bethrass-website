@@ -2,6 +2,7 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/ui/logo";
+import { NewsletterSection } from "@/components/sections/NewsletterSection";
 import { FOOTER_LINKS } from "./nav-links";
 
 export function Footer() {
@@ -10,23 +11,35 @@ export function Footer() {
   return (
     <footer className="border-t border-slate-800 bg-slate-950 pt-16 pb-8">
       <Container>
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
-          {/* Brand Column */}
-          <div className="col-span-2 lg:col-span-2">
-            <Logo />
-            <p className="mt-4 max-w-xs text-sm text-stone-400 leading-relaxed">
-              {siteConfig.description}
-            </p>
-            <div className="mt-6 flex flex-col gap-1 text-sm text-stone-500">
-              <p>{siteConfig.legalName}</p>
-              <p>
-                {siteConfig.location.locality}, {siteConfig.location.region}
+        <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,2fr)_repeat(3,minmax(0,1fr))]">
+          <div className="space-y-8 xl:col-span-2">
+            <div>
+              <Logo />
+              <p className="mt-4 max-w-xs text-sm text-stone-400 leading-relaxed">
+                {siteConfig.description}
               </p>
-              <p>{siteConfig.location.country}</p>
+              <div className="mt-6 flex flex-col gap-1 text-sm text-stone-500">
+                <p>{siteConfig.legalName}</p>
+                <p>
+                  {siteConfig.location.locality}, {siteConfig.location.region}
+                </p>
+                <p>{siteConfig.location.country}</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-display text-sm font-semibold text-stone-200 uppercase tracking-wider">
+                Subscribe to newsletter
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-[#BDBDBD] max-w-2xl">
+                Get occasional updates on Bethrass institutional technology, analytics, and trusted infrastructure work.
+              </p>
+              <div className="mt-6">
+                <NewsletterSection />
+              </div>
             </div>
           </div>
 
-          {/* Links Columns */}
           <div>
             <h3 className="font-display text-sm font-semibold text-stone-200 uppercase tracking-wider">
               Products
